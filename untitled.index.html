@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn3X - Earn from Home | Zero Investment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff6b35;
+            color: #ff6b35;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .hero .btn-primary {
+            background: white;
+            color: #ff6b35;
+        }
+
+        .hero .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: #fff8f0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 80px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .category-card.popular {
+            border: 2px solid #ff6b35;
+            transform: scale(1.02);
+        }
+
+        .earning-amount {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff6b35;
+            margin: 20px 0;
+        }
+
+        .category-card ul {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .category-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* How it Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: #fff8f0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #ff6b35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Poora body clickable - Link new tab mein khulega -->
+<div onclick="window.open('https://omg10.com/4/10704428', '_blank')" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; cursor: pointer;"></div>
+
+<div style="position: relative; z-index: 1; pointer-events: none;">
+    <div class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Earn3X</div>
+                <div class="nav-links">
+                    <a>Home</a>
+                    <a>How to Earn</a>
+                    <a>Categories</a>
+                    <a>Contact</a>
+                </div>
+                <div class="btn btn-primary">Join Now →</div>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Earn ₹25,000 - ₹5,00,000+ / Month</h1>
+            <p>Zero Investment | Work from Home | Lead Sharing & Affiliate Marketing App</p>
+            <div class="hero-buttons">
+                <div class="btn btn-primary">Start Earning Today</div>
+                <div class="btn btn-outline">How it Works ↓</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">💰 How Earn3X Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Install App</h3>
+                    <p>Download Earn3X for free</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Share Offers / Add Leads</h3>
+                    <p>Share products or add potential customers</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Get Orders</h3>
+                    <p>Our experts close the deals</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Earn & Withdraw</h3>
+                    <p>Transfer directly to your bank account</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">🔥 Why Choose Earn3X?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Real Estate Leads</h3>
+                    <p>Earn ₹25,000 - ₹5,00,000 per deal</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏦</div>
+                    <h3>Loans & Insurance</h3>
+                    <p>High commission on financial products</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>IT & Digital Marketing</h3>
+                    <p>Sell services & earn recurring income</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Top Brand Products</h3>
+                    <p>Amazon, Flipkart, Myntra & 50+ merchants</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Referral Earnings</h3>
+                    <p>Earn from your team's income too</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Zero Investment</h3>
+                    <p>Free to join - no hidden charges</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">🎯 High Income Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card popular">
+                    <h3>🏠 Real Estate</h3>
+                    <div class="earning-amount">₹25k - ₹5 Lac</div>
+                    <ul>
+                        <li>Residential Properties</li>
+                        <li>Commercial Properties</li>
+                        <li>Plot & Land Deals</li>
+                    </ul>
+                    <div class="btn btn-primary">Start Earning</div>
+                </div>
+                <div class="category-card">
+                    <h3>💰 Finance</h3>
+                    <div class="earning-amount">₹5k - ₹50k</div>
+                    <ul>
+                        <li>Loans (Home, Personal, Business)</li>
+                        <li>Credit Cards</li>
+                        <li>Insurance Policies</li>
+                    </ul>
+                    <div class="btn btn-outline">Start Earning</div>
+                </div>
+                <div class="category-card">
+                    <h3>🛍️ E-commerce</h3>
+                    <div class="earning-amount">Up to 15% Commission</div>
+                    <ul>
+                        <li>Amazon, Flipkart, Myntra</li>
+                        <li>Ajio, TataCliq, Croma</li>
+                        <li>1,00,000+ Products</li>
+                    </ul>
+                    <div class="btn btn-outline">Start Earning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Earn3X</h4>
+                    <p>India's smartest lead sharing & affiliate marketing app. Zero investment. Work from home.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a>How to Earn</a>
+                    <a>Categories</a>
+                    <a>Referral Program</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a>Contact Us</a>
+                    <a>Privacy Policy</a>
+                    <a>Terms & Conditions</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a>📞 +91 8745002200</a>
+                    <a>✉️ support@earn3x.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Earn3X | Empowering India 🇮🇳 | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
